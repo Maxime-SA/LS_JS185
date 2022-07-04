@@ -1,5 +1,13 @@
 const Client = require('pg').Client; // Same as 'const { Client } = require('pg');'
+const queryText = 'SELECT * FROM directors';
 
-console.log('Hello World!');
+let client = new Client({ database: 'films' });
 
+async function logQuery(queryText) {
+  await client.connect();
+  let data = await client.query(queryText);
+  console.log(data);
+  client.end();
+};
 
+logQuery(queryText);
