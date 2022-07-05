@@ -8,6 +8,6 @@ async function logQuery(queryText) {
   let data = await client.query(queryText);
   console.log(data);
   client.end();
-};
+}
 
 logQuery(queryText);
