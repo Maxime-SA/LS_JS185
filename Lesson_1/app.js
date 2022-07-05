@@ -7,7 +7,7 @@ async function logQuery(queryText) {
   await client.connect();
   let data = await client.query(queryText);
   console.log(data);
-  client.end();
+  await client.end();
 }
 
 logQuery(queryText);
