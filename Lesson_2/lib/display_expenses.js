@@ -5,19 +5,15 @@ const amountPadding = 12;
 function displayExpenses(data) {
   console.log('');
 
-  let maximumRowLength = 0;
-
   data.forEach(row => {
     let currentRow = [];
     Object.keys(row).forEach(column => {
       currentRow.push(formatColumns(row, column));
     });
     printOutput(currentRow);
-    maximumRowLength = currentRow.join(' | ').length >= maximumRowLength ? currentRow.join(' | ').length : maximumRowLength;
   });
 
   console.log('');
-  return maximumRowLength;
 }
 
 function formatColumns(row, column) {
