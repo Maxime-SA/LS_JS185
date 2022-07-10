@@ -6,3 +6,4 @@ package.json
 jest.config.js
 coverage/
 session-store.db
+todos_app/lib/users.sql
